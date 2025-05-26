@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background-color: #f3eeea;
+}
+
+.Search_Rectangle{
+height: 10vh;
+width: 70%;
+background-color: #d6dee3;
+margin-top: 10vh;
+border-radius: 50px;
+}
+
+
+.General_Container{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.General_Container h1{
+    font-size: 60px;
+    margin-left: 30vw;
+    margin-top: 4vh;
+    background-color: #7EA8BE;
+}
