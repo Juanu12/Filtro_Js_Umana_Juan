@@ -1,19 +1,42 @@
 *{
     margin: 0;
     padding: 0;
-    overflow: auto;
-    background-color: #f3eeea;
+    overflow: scroll;
 }
 
-.Search_Rectangle{
-height: 10vh;
+
+body{
+    background-color: #f3eeea;
+
+}
+.Search_Rectangle input{
+height: 8vh;
 width: 70%;
-background-color: #d6dee3;
+background-color: #f4f8fb;
 margin-top: 10vh;
 border-radius: 50px;
+margin-left: 8vw;
+border: 1px solid black;
 }
 
 
+
+   
+
+
+.Search_Rectangle button {
+height: 4vh;
+margin-left: 1vw;
+width: 10%;
+border-radius:10px;
+    }
+
+
+.Search_Rectangle input[type="text"]{
+    font-size: 30px
+
+    }
+    
 .General_Container{
     display: flex;
     flex-direction: column;
@@ -21,9 +44,43 @@ border-radius: 50px;
 }
 
 
-.General_Container h1{
+.General_Container_Title h1{
     font-size: 60px;
     margin-left: 30vw;
     margin-top: 4vh;
-    background-color: #7EA8BE;
 }
+
+
+#Diaplayfood{
+    display: flex;
+    flex-direction: column;
+}
+
+.Food_container p{
+    font-size: 10vw;
+    position: fixed;
+
+}
+
+.Food_container img{
+height: 40vh;    
+margin-left: 10vw;
+margin-top: 3vw ;
+margin-bottom: 1vw;
+}
+
+
+.Food_container p{
+font-size: 60px;
+margin-left: 12vw;
+position: relative;
+    }
+    
+.Food_container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      
+      border: 1px solid black;
+      margin-top: 1vh;
+            }
+            
