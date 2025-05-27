@@ -52,7 +52,7 @@ border-radius:10px;
 
 
 #Diaplayfood{
-    display: flex;
+    display: block;
     flex-direction: column;
 }
 

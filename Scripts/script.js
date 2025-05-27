@@ -22,7 +22,9 @@ async function Fetchdata() {
 }
 
 
-
+function traer(key){
+    fetch(`www.themealdb.com/api/json/v1/1/search.php?s=${key}`)
+}
 
 async function Displaydata() {
     let info = ""
@@ -68,7 +70,8 @@ try {
 document.getElementById("Filtrar").addEventListener("click", async function (e) {
 
     e.preventDefault()
-
+    let comidita = document.getElementById("Diaplayfood")
+    comidita.style.display = "none";
 
     const Opt = document.getElementById("Filtrar").value
     if (Opt === "Beef") {
