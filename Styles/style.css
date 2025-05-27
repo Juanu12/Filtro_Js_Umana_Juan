@@ -101,3 +101,13 @@ margin-top: 10vw;
     border-radius: 10px;
     border: 1px solid black ;
 }
+
+.Search_Rectangle select{
+    width: 13vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 4vw;
+    margin-left: 20px;
+    border-radius: 20px;
+}
