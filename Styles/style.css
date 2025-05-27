@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    overflow: scroll;
+    overflow: auto;
 }
 
 
@@ -71,16 +71,33 @@ margin-bottom: 1vw;
 
 
 .Food_container p{
-font-size: 60px;
+font-size: 48px;
 margin-left: 12vw;
 position: relative;
+margin-top: 10vw;
     }
     
 .Food_container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       
       border: 1px solid black;
-      margin-top: 1vh;
+      margin-top: 2vh;
+      height: auto;
+      width: auto;
             }
-            
+.Food_container img{
+    border-radius: 5px;
+}
+
+.Food_container button{
+    border-radius: 5px;
+    margin-left: 10vw;
+    width: 20vw;
+    height: 7vh;
+    font-size: 50px;
+    margin-bottom: 1vw;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black ;
+}

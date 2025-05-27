@@ -3,7 +3,7 @@ const Food = document.getElementById("Diaplayfood")
 
  async function Fetchdata(){
     try{
-        const response = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+        const response = await fetch("https://www.themealdb.com/api/json/v1/1/random.php")
 
         if(!response.ok){
             throw new Error ( `Error HTTP ${response.status} `)
@@ -12,7 +12,7 @@ const Food = document.getElementById("Diaplayfood")
 
         const data = await response.json()
         console.log(data)
-        return data
+        return data.meals[0]
 
     } catch(error)
     {
@@ -25,16 +25,18 @@ const Food = document.getElementById("Diaplayfood")
 
 
 async function Displaydata(){
-    let data = await Fetchdata()
     let info = ""
-    for(i=0; i<data.meals.length; i++){
+    for(i=0; i<10; i++){
 
-        let comida = data.meals[i]
+        let comida = await Fetchdata()
     console.log(comida)
         info += `   <div class="Food_container">
         <img src="${comida.strMealThumb}" alt="">
        <p>${comida.strMeal}</p>
        <p>${comida.strCategory}</p>
+       <p>${comida.strArea}</p>
+       
+        <button>Mas información</button>
          </div>`
 
 
