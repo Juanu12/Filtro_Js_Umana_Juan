@@ -21,28 +21,8 @@ async function Fetchdata() {
 
 }
 
-async function Fetchdata2() {
-    try {
-        const response = await fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef")
-
-        if (!response.ok) {
-            throw new Error(`Error HTTP ${response.status} `)
-        }
 
 
-        const data = await response.json()
-        console.log(data)
-        return data
-
-
-    } catch (error) {
-        console.error("Ocurrió un error", error)
-    }
-
-
-}
-
-Fetchdata2()
 
 async function Displaydata() {
     let info = ""
@@ -68,33 +48,32 @@ async function Displaydata() {
 
 Displaydata()
 
+async function Fetchbeef(){
+
+try {
+    const response = await fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef")
+
+    if (!response.ok) {
+        throw new Error(`Error HTTP ${response.status} `)
+    }
 
 
-
-
-document.getElementById("Filtrar").addEventListener("change", async function (e) {
+    const data = await response.json()
+    console.log(data)
+    return data.meals
+} catch (error) {
+    console.error("Ocurrió un error", error)
+}
+}
+document.getElementById("Filtrar").addEventListener("click", async function (e) {
 
     e.preventDefault()
 
 
     const Opt = document.getElementById("Filtrar").value
     if (Opt === "Beef") {
-
-        try {
-            const response = await fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef")
-
-            if (!response.ok) {
-                throw new Error(`Error HTTP ${response.status} `)
-            }
-
-
-            const data = await response.json()
-            console.log(data)
-            Displaybeef(data.meals)
-        } catch (error) {
-            console.error("Ocurrió un error", error)
-        }
-
+Beef.innerHTML="";
+const beefdata = await Fetchbeef();
 
         async function Displaybeef(meals) {
             let info2 = ""
@@ -111,15 +90,21 @@ document.getElementById("Filtrar").addEventListener("change", async function (e)
 
 
             }
-            Beef.innerHTML = info2
+                        Beef.innerHTML = info2
         }
 
+        Displaybeef(beefdata);
+
+    }else{
+        Beef.innerHTML =`<p>No se encontraron recetas</p>`;
+    }
 
 
 
 
     }
-}
+
 
 
 )
+
