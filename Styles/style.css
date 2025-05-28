@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    overflow: auto;
 }
 
 
@@ -53,12 +52,14 @@ border-radius:10px;
 
 #Diaplayfood{
     display: block;
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2vw;
 }
 
 .Food_container p{
-    font-size: 10vw;
-    position: fixed;
+    font-size: 2vw;
 
 }
 
@@ -70,24 +71,25 @@ margin-bottom: 1vw;
 }
 
 
-.Food_container p{
-font-size: 48px;
-margin-left: 12vw;
-position: relative;
-margin-top: 10vw;
-    }
-    
+
 .Food_container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      
+    max-width: 25vw;
+      display: flex;
+      align-items: center;
       border: 1px solid black;
       margin-top: 2vh;
       height: auto;
       width: auto;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2vw;
             }
 .Food_container img{
     border-radius: 5px;
+    width: 15vw;
+    height: 20vh;
+    margin-left: 0vw;
 }
 
 .Food_container button{
@@ -95,7 +97,7 @@ margin-top: 10vw;
     margin-left: 10vw;
     width: 20vw;
     height: 7vh;
-    font-size: 50px;
+    font-size: 2vw;
     margin-bottom: 1vw;
     background-color: white;
     border-radius: 10px;
