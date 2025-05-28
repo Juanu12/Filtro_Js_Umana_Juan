@@ -28,9 +28,18 @@ function traer(key){
 
 async function Displaydata() {
     let info = ""
-    for (i = 0; i < 10; i++) {
-
+    for (i = 0; i < 15; i++) {
+        let ingredientes =""
         let comida = await Fetchdata()
+        for(let q=0;q<20;q++){
+            let enlace = `strIngredient${q}`
+            if (comida[enlace]=="" || comida[enlace] == null){
+                ingredientes += ""
+            }
+            else{
+                ingredientes += `${comida[enlace]}<br>`
+            }
+        }
         console.log(comida)
         info += `   <div class="Food_container">
         <img src="${comida.strMealThumb}" alt="">
@@ -39,7 +48,11 @@ async function Displaydata() {
        <p>${comida.strArea}</p>
        
         <button>Mas información</button>
-         </div>`
+        <div id="Card">
+        <p>Ingredients: <br>${ingredientes}<br></p>
+        <p>${comida.strInstructions}</p>
+        </div>
+         </div> `
 
 
 
